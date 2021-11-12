@@ -9,11 +9,12 @@ main{
     position: relative;
     background: #1a1b26;
     min-height: 100vh;
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 main::before, main::after{
     content: '';
@@ -40,14 +41,19 @@ main:after{
         transform: translateX(0%);
     }
     50%{
-        transform: translateX(50%);
+        transform: translateX(60%);
     }
     100%{
         transform: translateX(0%);
     }
 }
 /* Rate styling */
-
+.rate{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .rate__blog{
     display: flex;
     flex-direction: column;
@@ -56,7 +62,6 @@ main:after{
     backdrop-filter: blur(20px);
     border-radius: 30px;
     padding: 30px; 
-    max-width: 400px;
     width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.400);
     transition: .5s;
@@ -161,4 +166,28 @@ main:after{
 .send__button:hover{
     background: #fff;
     color: #0077ff;
+}
+@media (max-width: 576px) {
+    main::before{
+        left: 0%;
+        top: 0;
+        width: 200px;
+        height: 200px;
+    }
+    main::after{
+        left: 0%;
+        bottom: 0;
+        width: 200px;
+        height: 200px;
+    }
+    .rate{
+        max-width: 350px;
+    }
+    .rate__blog{
+        padding: 20px !important;
+    }
+    .emoji__blog{
+        width: 220px;
+        height: 220px;
+    }
 }
